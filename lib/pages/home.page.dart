@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping/pages/product.page.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -46,7 +47,7 @@ class HomePage extends StatelessWidget {
             ),
             Container(
               height: 350,
-              child: productList(),
+              child: productList(context),
             ),
           ],
         ),
@@ -137,24 +138,81 @@ Widget categoryItem() {
   );
 }
 
-Widget productList() {
+Widget productList(BuildContext context) {
   return Container(
     child: ListView(
       scrollDirection: Axis.horizontal,
       children: <Widget>[
-        productItem(),
-        productItem(),
+        productItem(context),
+        productItem(context),
+        productItem(context),
+        productItem(context),
+        productItem(context),
       ],
     ),
   );
 }
 
-Widget productItem() {
+Widget productItem(BuildContext context) {
   return Container(
+    width: 170,
     padding: EdgeInsets.all(10),
     margin: EdgeInsets.all(5),
-    width: 170,
     color: Colors.black12,
-    child: Text('Produto'),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProductPage(),
+              ),
+            );
+          },
+          child: Image.asset(
+            'assets/product-1.png',
+            width: 170,
+            height: 170,
+            fit: BoxFit.cover,
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Container(
+          height: 60,
+          child: Text(
+            'Título do Produto',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Text(
+          'Marca',
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Text(
+          '\$ 200',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.green,
+          ),
+        )
+      ],
+    ),
   );
 }
