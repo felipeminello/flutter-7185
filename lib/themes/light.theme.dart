@@ -14,6 +14,10 @@ ThemeData lightTheme() {
       bodyText2: new TextStyle(color: Colors.red), //body1
       headline1: new TextStyle(fontSize: 78), //display4
       button: new TextStyle(color: Colors.green),
+      headline5: new TextStyle(
+        color: Colors.deepPurple,
+        fontWeight: FontWeight.bold,
+      ), //headline
     ),
   );
 }
