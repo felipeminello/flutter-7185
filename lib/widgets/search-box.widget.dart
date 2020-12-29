@@ -28,7 +28,7 @@ class SearchBox extends StatelessWidget {
                 border: InputBorder.none,
                 hintText: 'Search...',
                 labelStyle: TextStyle(
-                  color: Colors.black,
+                  // color: Colors.black,
                   fontWeight: FontWeight.w400,
                   fontSize: 16,
                 ),
