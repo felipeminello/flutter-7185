@@ -11,7 +11,7 @@ ThemeData lightTheme() {
     primaryColor: primaryColor,
     accentColor: Colors.white,
     textTheme: new TextTheme(
-      bodyText2: new TextStyle(color: Colors.red), //body1
+      bodyText2: new TextStyle(color: Colors.black54), //body1
       headline1: new TextStyle(fontSize: 78), //display4
       button: new TextStyle(color: Colors.green),
       headline5: new TextStyle(

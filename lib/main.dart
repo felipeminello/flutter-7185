@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Shopping',
       debugShowCheckedModeBanner: false,
-      theme: darkYellowTheme(),
+      theme: lightTheme(),
       home: DefaultTabController(
         length: 3,
         child: TabsPage(),
