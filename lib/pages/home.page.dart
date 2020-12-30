@@ -10,8 +10,9 @@ class HomePage extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.all(15),
         // color: Color(0xFFF5F5F5),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: ListView(
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
+          padding: EdgeInsets.only(top: 0),
           children: <Widget>[
             SizedBox(
               height: 60,

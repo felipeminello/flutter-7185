@@ -7,7 +7,9 @@ class AnimatedInput extends StatelessWidget {
   final Animation<double> containerBorderRadiusAnim;
   final Animation<double> containerSizeAnim;
 
-  AnimatedInput({this.controller})
+  final BuildContext context;
+
+  AnimatedInput({this.controller, this.context})
       : containerOpacityAnim = Tween(
           begin: 0.0,
           end: 1.0,
@@ -19,7 +21,8 @@ class AnimatedInput extends StatelessWidget {
         ),
         containerSizeAnim = Tween(
           begin: 60.0,
-          end: 280.0,
+          //end: 280.0,
+          end: MediaQuery.of(context).size.width,
         ).animate(
           CurvedAnimation(
             parent: controller,
@@ -73,8 +76,8 @@ class AnimatedInput extends StatelessWidget {
             SizedBox(
               width: 20,
             ),
-            Container(
-              width: 200,
+            Expanded(
+              //width: 200,
               child: TextFormField(
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
@@ -91,6 +94,9 @@ class AnimatedInput extends StatelessWidget {
                   color: Theme.of(context).primaryColor,
                 ),
               ),
+            ),
+            SizedBox(
+              width: 40,
             ),
           ],
         ),

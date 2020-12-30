@@ -34,18 +34,25 @@ class _SearchBoxState extends State<SearchBox>
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        AnimatedInput(
-          controller: _controller,
+        Expanded(
+          flex: 8,
+          child: AnimatedInput(
+            controller: _controller,
+            context: context,
+          ),
         ),
-        FlatButton(
-          onPressed: () {
-            !menuOpened ? _controller.forward() : _controller.reverse();
-            menuOpened = !menuOpened;
-          },
-          child: AnimatedIcon(
-            icon: AnimatedIcons.menu_close,
-            progress: _controller,
-            semanticLabel: 'More',
+        Expanded(
+          flex: 2,
+          child: FlatButton(
+            onPressed: () {
+              !menuOpened ? _controller.forward() : _controller.reverse();
+              menuOpened = !menuOpened;
+            },
+            child: AnimatedIcon(
+              icon: AnimatedIcons.menu_close,
+              progress: _controller,
+              semanticLabel: 'More',
+            ),
           ),
         ),
       ],
